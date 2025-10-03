@@ -12,7 +12,7 @@ int main(void) {
      * Q4: (float)2/4 and assign the result to a float
      * Q4A: (float)(2/4)
      * Q5: 7 % 2, assign the result to an int. What does this do, qualitatively?
-     * Q6: 100 % 10, assign the result to an int. Now, what if it was 100.5 % 10?
+     * Q6: 100 % 10, assign the result to an int. Q6a: Now, what if it was 100.5 % 10?
      * Q7: UINT_MAX + 1, assign the result to an unsigned integer
      * Q8: UINT_MAX + 1, assign the result to an int
      * Q9: For a = 3, evaluate a++ and ++a and note the difference (hint: use a printf statement)
@@ -31,6 +31,50 @@ int main(void) {
 
 
     //To write our program, we include limits.h which allows us to grab INT_MAX and INT_MIN values
-    printf("INT_MIN is %d", INT_MIN);
+
+    //Question 1
+    printf("To test our limits.h library...INT_MIN is %d\n", INT_MIN);
+    printf("The answer to question 1 is: %d\n", INT_MIN + 1);
+    printf("The answer to question 1A is %d\n", INT_MIN - 1); //this overflows to INT_MAX
+
+    //Question 2
+    float b = 2.0/4.0;
+    printf("The answer to question 2 is: %.2f\n", b);
+    //Question 3
+    float c = 2/4;
+    printf("The answer to question 3 is: %.2f\n", c);
+
+    //Question 4
+    float d = (float)2/4;
+    printf("The answer to question 4 is: %.2f\n", d);
+
+
+    //Question 4a
+    float e = (float)(2/4);
+    printf("The answer to question 4a is: %.2f\n", e);
+
+
+    //Question 5
+    int q5 = 7 % 2;
+    printf("The answer to question 5 is: %d\n", q5); //qualitatively, this gives 1 or 0 for odd or even, respectively
+
+    //Question 6
+    int q6 = 100 % 10;
+    printf("The answer to question 6 is: %d\n", q6);  // 100.5 % 10 will give error
+
+    //Question 7
+    unsigned q7 = UINT_MAX + 1;
+    printf("The answer to question 6 is: %u\n", q7);
+
+    //Question 8
+    int q8 = UINT_MAX + 1;
+    printf("The answer to question 6 is: %d\n", q8);
+
+    //Question 9: Compare a++ and ++a
+    int x = 3;
+    int y = 3;
+
+    printf("x++ is %d and ++y is %d\n", x++, ++y);
+    printf("The new values of a and b are %d and %d, respectively\n", x, y);
     return 0;
 }
